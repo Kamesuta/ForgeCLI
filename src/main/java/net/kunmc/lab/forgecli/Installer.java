@@ -2,14 +2,11 @@ package net.kunmc.lab.forgecli;
 
 import java.io.File;
 
-import net.kunmc.lab.forgecli.impl.InstallerUtil;
 import net.minecraftforge.installer.actions.ProgressCallback;
-import net.minecraftforge.installer.json.Install;
 
 public class Installer {
-    public static boolean install(File target, File installerJar, String forgeVersion) {
+    public static boolean install(File target, File installerJar) {
         ProgressCallback monitor = ProgressCallback.withOutputs(System.out);
-        Install install = InstallerUtil.loadInstallProfile(forgeVersion);
         if (System.getProperty("java.net.preferIPv4Stack") == null) {
             System.setProperty("java.net.preferIPv4Stack", "true");
         }
@@ -18,6 +15,6 @@ public class Installer {
         String jvmVersion = System.getProperty("java.vm.version", "missing jvm version");
         monitor.message(String.format("JVM info: %s - %s - %s", vendor, javaVersion, jvmVersion));
         monitor.message("java.net.preferIPv4Stack=" + System.getProperty("java.net.preferIPv4Stack"));
-        return InstallerUtil.runClientInstall(forgeVersion, install, monitor, target, installerJar);
+        return InstallerUtil.runClientInstall(monitor, target, installerJar);
     }
 }

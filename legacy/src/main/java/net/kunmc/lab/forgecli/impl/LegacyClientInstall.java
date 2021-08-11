@@ -7,6 +7,7 @@ import net.minecraftforge.installer.actions.ActionCanceledException;
 import net.minecraftforge.installer.actions.ClientInstall;
 import net.minecraftforge.installer.actions.ProgressCallback;
 import net.minecraftforge.installer.json.Install;
+import net.minecraftforge.installer.json.Util;
 
 public class LegacyClientInstall extends ClientInstall {
     public LegacyClientInstall(Install profile, ProgressCallback monitor) {
@@ -16,5 +17,9 @@ public class LegacyClientInstall extends ClientInstall {
     @Override
     public boolean run(File target, Predicate<String> optionals) throws ActionCanceledException {
         return super.run(target, optionals);
+    }
+
+    public static Install loadInstallProfile() {
+        return Util.loadInstallProfile();
     }
 }
