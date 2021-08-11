@@ -3,7 +3,7 @@
   "component": {
     "group": "net.kunmc.lab",
     "module": "ForgeCLI",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "attributes": {
       "org.gradle.status": "release"
     }
@@ -25,13 +25,13 @@
       },
       "files": [
         {
-          "name": "ForgeCLI-1.0.0.jar",
-          "url": "ForgeCLI-1.0.0.jar",
-          "size": 7522,
-          "sha512": "5dfe388fea1d6d7f6753c6ade3de81932de50e32bf25a0231a2642f401232cfee3d188d65d6da3da3408cc083efeb114beb18e3339690fe77020e9b12cf9d298",
-          "sha256": "daf50df8897ffcff6780777711ed1aff1510ff258604db7f9221a5329613ade3",
-          "sha1": "310d91c4aefac4c6ca9ab20fd189678732734454",
-          "md5": "5a99581e5dc1e42a8785e45f4b0c6af7"
+          "name": "ForgeCLI-1.0.1.jar",
+          "url": "ForgeCLI-1.0.1.jar",
+          "size": 6412,
+          "sha512": "b08ba8a97962e23da1957e657084785a30ae3009cf00cea4fea202814cc434537ffc7babd5964ea66522c6ada29a211b8148ee68b22553adb9a5d671c935ff8a",
+          "sha256": "f37cfd00c4c0ad09ff3086ca8b83e52a87ea41bd15d49a75392df99cb28a1d41",
+          "sha1": "5a141763029d82773736bdfeb61a2347308ce769",
+          "md5": "d3dd775287e760a3c8277584a745939c"
         }
       ]
     },
@@ -55,13 +55,13 @@
       ],
       "files": [
         {
-          "name": "ForgeCLI-1.0.0.jar",
-          "url": "ForgeCLI-1.0.0.jar",
-          "size": 7522,
-          "sha512": "5dfe388fea1d6d7f6753c6ade3de81932de50e32bf25a0231a2642f401232cfee3d188d65d6da3da3408cc083efeb114beb18e3339690fe77020e9b12cf9d298",
-          "sha256": "daf50df8897ffcff6780777711ed1aff1510ff258604db7f9221a5329613ade3",
-          "sha1": "310d91c4aefac4c6ca9ab20fd189678732734454",
-          "md5": "5a99581e5dc1e42a8785e45f4b0c6af7"
+          "name": "ForgeCLI-1.0.1.jar",
+          "url": "ForgeCLI-1.0.1.jar",
+          "size": 6412,
+          "sha512": "b08ba8a97962e23da1957e657084785a30ae3009cf00cea4fea202814cc434537ffc7babd5964ea66522c6ada29a211b8148ee68b22553adb9a5d671c935ff8a",
+          "sha256": "f37cfd00c4c0ad09ff3086ca8b83e52a87ea41bd15d49a75392df99cb28a1d41",
+          "sha1": "5a141763029d82773736bdfeb61a2347308ce769",
+          "md5": "d3dd775287e760a3c8277584a745939c"
         }
       ]
     },
@@ -75,13 +75,13 @@
       },
       "files": [
         {
-          "name": "ForgeCLI-1.0.0-sources.jar",
-          "url": "ForgeCLI-1.0.0-sources.jar",
-          "size": 3883,
-          "sha512": "d6eb3dd8bc848b47ae2dee21bee0bc356ee317c187ce732a81b3e12176840b94d805979909304f02f81851bf3b08665fd570630a4f1c3d48cfb914ed53601e75",
-          "sha256": "c8b237ec0108f2507e40a18060ee67f9960803f799ae17aef931faa7d97fd8af",
-          "sha1": "8ebd37bc67084e97046d307ff9c8bc5a2be000f8",
-          "md5": "8cdfe41aea2b310a0c22a56b1af5df63"
+          "name": "ForgeCLI-1.0.1-sources.jar",
+          "url": "ForgeCLI-1.0.1-sources.jar",
+          "size": 3472,
+          "sha512": "688e803d0e46b7620645207832bab229c4d1a6314220d4fb88ec817f30f81657b5329a472986afb5c7dcad1d2770c21036f737223fb57596c857e681c95f4142",
+          "sha256": "c99fb3bf144ebfd86d454b2fed6daea889859f528fb2a0d468c51612da4b5c33",
+          "sha1": "4ad762a631f52339cbb44042cd81b7cdf97353c4",
+          "md5": "f1bf8a906a4440c643c665bd879ac855"
         }
       ]
     }
