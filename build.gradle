@@ -1,0 +1,88 @@
+
+plugins {
+    id "java"
+    id "maven-publish"
+    id 'com.github.johnrengelman.shadow' version '5.0.0'
+}
+
+sourceCompatibility = targetCompatibility = 1.8
+compileJava {
+    sourceCompatibility = targetCompatibility = 1.8
+}
+
+version = "${fw_version}${-> getVersionSuffix()}"
+group = "net.kunmc.lab"
+archivesBaseName = rootProject.name
+
+configurations {
+    shadow {
+        implementation.extendsFrom shadow
+    }
+}
+
+shadowJar {
+    configurations = [project.configurations.shadow]
+}
+tasks.assemble.dependsOn(shadowJar)
+
+repositories {
+    mavenCentral()
+    maven {
+        name = "forge"
+        url = "https://maven.minecraftforge.net/"
+    }
+}
+
+dependencies {
+    compileOnly "net.minecraftforge:installer:2.1.4"
+
+    shadow project(":legacy")
+}
+
+java {
+    withSourcesJar()
+}
+
+jar {
+    manifest.attributes([
+        "Specification-Title": "${project.name}",
+        "Specification-Vendor": "Kamesuta",
+        "Specification-Version": "${project.version}".split("-")[0],
+        "Implementation-Title": "${project.name}",
+        "Implementation-Version": "${project.version}",
+        "Implementation-Vendor" :"Kamesuta",
+        "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ"),
+        "Automatic-Module-Name": "${project.group}.${project.archivesBaseName}".toString().toLowerCase(),
+        "Multi-Release": "true",
+        "Main-Class": "net.kunmc.lab.forgecli.Main",
+        "GitCommit": String.valueOf(System.getenv("GITHUB_SHA"))
+    ])
+}
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            groupId "${project.group}"
+            artifactId "${project.archivesBaseName}"
+            version "${project.version}"
+
+            from components.java
+        }
+    }
+    repositories {
+        maven {
+            url = layout.buildDirectory.dir("maven")
+        }
+    }
+
+}
+tasks.publish.dependsOn build
+
+static String getVersionSuffix() {
+    if (System.getenv("IS_PUBLICATION") != null) {
+        return ""
+    } else if (System.getenv("GITHUB_RUN_NUMBER") != null && System.getenv("GITHUB_SHA") != null) {
+        return "-s." + System.getenv("GITHUB_RUN_NUMBER") + "-" + System.getenv("GITHUB_SHA").substring(0, 7)
+    }
+    return "-LOCAL"
+}

@@ -1,0 +1,10 @@
+JVM info: Oracle Corporation - 1.8.0_251 - 25.251-b08
+java.net.preferIPv4Stack=true
+Found java version 1.8.0_251
+Exception in thread "main" 
+java.lang.NullPointerException
+	at java.io.Reader.<init>(Reader.java:78)
+	at java.io.InputStreamReader.<init>(InputStreamReader.java:113)
+	at net.minecraftforge.installer.json.Util.loadInstallProfile(Util.java:38)
+	at net.minecraftforge.installer.SimpleInstaller.launchGui(SimpleInstaller.java:174)
+	at net.minecraftforge.installer.SimpleInstaller.main(SimpleInstaller.java:149)
